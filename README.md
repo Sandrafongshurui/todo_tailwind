@@ -1,1 +1,1 @@
-# Tetsing Tailwind with a todo list
+# Testing Tailwind with a todo list
