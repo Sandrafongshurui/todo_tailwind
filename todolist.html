@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div class="grid place-items-center py-5">
+        <h1 class="font-bold">To Do List</h1>
+        <form class="form-input" id ="data-form">
+            <input
+            id="data-input"
+                class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text" placeholder="enter...">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded my-2">
+                submit</button>
+        </form>
+        <div class="lists" id="data-lists">
+        </div>
+
+    </div>
+    <script src="/todolist.js"></script>
+</body>
+
+</html>
