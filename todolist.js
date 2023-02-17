@@ -1,5 +1,5 @@
 const form = document.getElementById('data-form')
-const lists = document.getElementById('data-lists')
+const lists = document.getElementById('data-list')
 const input = document.getElementById('data-input')
 
 console.log(form)
@@ -16,6 +16,8 @@ form.addEventListener('submit', (evnt) => {
   UI.clearInput()
 })
 
+
+
 class Todo {
   constructor(id, todo) {
     this.id = id
@@ -24,13 +26,14 @@ class Todo {
 
 }
 
+//static classes only can be called by the class itself, not the object of the class 
 class UI {
   static displayListArry(list) {
     let displayData = list.map((item) => {
       return(
         `<div class='border flex'>
         <p>${item.todo}</p>
-        <button class='bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded my-2'>delete</button>
+        <button id="${item.id}"class='delete bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded my-2' onclick ="UI.removeTodo(this)">delete</button>
         </div>`)
     })
     console.log(displayData)
@@ -41,7 +44,14 @@ class UI {
     input.value = ""
   }
 
-  static removeTodo(){
-    
+  static removeTodo(element){
+    element.parentElement.remove()
+    UI.removeFromArry(element.id)
+  }
+
+  static removeFromArry(evntId){
+    listArry=listArry.filter((item)=>
+      item.id !== +evntId
+    ) 
   }
 }
