@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./dist/output.css" rel="stylesheet">
+    <link href="../dist/output.css" rel="stylesheet">
     <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
   
     <title>To Do List</title>
 </head>
 
 <body>
-    <div class="grid place-items-center py-5">
-        <h1 class="text-3xl font-bold underline">To Do List</h1>
-        <form class="form-input" id ="data-form">
+    <div class="tw-grid tw-place-items-center tw-py-5">
+        <h1 class="tw-text-3xl tw-font-bold tw-underline title">Fancy To Do List</h1>
+        <form class="tw-form-input" id ="data-form">
             <input
             id="data-input"
-                class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="tw-shadow tw-appearance-none tw-border tw-rounded tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight tw-focus:outline-none tw-focus:shadow-outline"
                 type="text" placeholder="enter...">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded my-2">
+            <button class="tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-my-2">
                 submit</button>
         </form>
-        <div class="lists" id="data-list">
+        <div id="data-list">
+            <div class='tw-border tw-p-2'>
+                <p class="tw-self-center">${item.todo}</p>
+                <button id="${item.id}-edit"class='tw-bg-green-500 hover:tw-bg-green-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-my-2' onclick ="UI.editTodo(this)">Edit</button>
+                <button id="${item.id}-delete"class='tw-bg-red-500 hover:tw-bg-red-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-my-2' onclick ="UI.removeTodo(this)">Delete</button>
+                </div>
         </div>
 
     </div>

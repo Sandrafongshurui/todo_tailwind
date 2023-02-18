@@ -31,9 +31,10 @@ class UI {
   static displayListArry(list) {
     let displayData = list.map((item) => {
       return(
-        `<div class='border flex'>
-        <p>${item.todo}</p>
-        <button id="${item.id}"class='delete bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded my-2' onclick ="UI.removeTodo(this)">delete</button>
+        `<div class='tw-border tw-p-2'>
+        <p class="tw-self-center">${item.todo}</p>
+        <button id="${item.id}-edit"class='tw-bg-green-500 hover:tw-bg-green-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-my-2' onclick ="UI.editTodo(this)">Edit</button>
+        <button id="${item.id}-delete"class='tw-bg-red-500 hover:tw-bg-red-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-my-2' onclick ="UI.removeTodo(this)">Delete</button>
         </div>`)
     })
     console.log(displayData)
@@ -53,5 +54,9 @@ class UI {
     listArry=listArry.filter((item)=>
       item.id !== +evntId
     ) 
+  }
+
+  static editTodo(element){
+    console.log("edit")
   }
 }

@@ -4,3 +4,7 @@
 
 @tailwind utilities;
 
+.title{
+    color: brown;
+    font-weight: 100;
+}
